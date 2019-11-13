@@ -2,7 +2,7 @@ import axios from "axios";
 // import { client_id } from "../../secret";
 
 //initial state
-const initialState = {
+const initialState: Object = {
   user_id: null,
   username: "",
   email: ""
@@ -15,10 +15,10 @@ const LOGIN_USER = "LOGIN_USER";
 const LOGOUT_USER = "LOGOUT_USER";
 
 //functions
-export function getSession(username: any) {
+export function getSession() {
   return {
     type: GET_SESSION,
-    payload: axios.get(`/auth/user?username=${username}`)
+    payload: axios.get(`/auth/user`)
   };
 }
 
