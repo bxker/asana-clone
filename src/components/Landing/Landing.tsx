@@ -3,6 +3,9 @@ import {connect} from 'react-redux';
 import {getSession} from '../../redux/reducers/userReducer';
 import { Redirect, Link } from 'react-router-dom';
 
+//components
+import LandingHeader from './LandingHeader/LandingHeader'
+
 const Landing: React.FC<{user_id: number, getSession: Function}> = (props) => {
 
     React.useEffect(() => {
@@ -14,6 +17,7 @@ const Landing: React.FC<{user_id: number, getSession: Function}> = (props) => {
     }else{
         return (
             <div>
+                <LandingHeader />
                 <h1>Landing Comp</h1>
                 <Link to="/login">Login</Link>
                 <Link to="/register">Register</Link>
