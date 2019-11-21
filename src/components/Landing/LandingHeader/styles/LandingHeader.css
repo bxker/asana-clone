@@ -11,8 +11,8 @@
 }
 
 .landing-header-main {
-  width: 70vw;
-  height: 8vh;
+  width: 75vw;
+  height: 7vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,7 +45,7 @@
 }
 
 .asana-logo {
-  max-width: 100px;
+  max-width: 120px;
 }
 
 .down-arrow {
