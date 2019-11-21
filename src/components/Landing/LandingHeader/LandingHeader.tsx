@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {getSession} from '../../../redux/reducers/userReducer';
 import { Link } from 'react-router-dom';
 import './styles/LandingHeader.scss'
+// import Login from '../../Login/Login';
 
 const Landing: React.FC<{user_id: number, getSession: Function}> = (props) => {
     return (

@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {loginUser, getSession} from '../../redux/reducers/userReducer';
 import { Redirect, Link } from 'react-router-dom';
+import './styles/Login.css';
 
 
 
@@ -22,12 +23,18 @@ const Login: React.FC<{username: String, password: String, user_id: number, logi
         return <Redirect to='/main'/>
     }else{
         return (
-            <div>
-                <h1>Login Comp</h1>
-                <input placeholder="username" onChange={e => setUsername(e.target.value)}/>
-                <input placeholder="password" onChange={e => setPassword(e.target.value)}/>
-                <button onClick={() => login()}>Login</button>
-                <h1>Don't have an account?<Link to="/register"> here!</Link></h1>
+            <div className='login-parent'>
+                <div className="login-main">
+                    <h1>Log In</h1>
+                    <button className="google-login"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1004px-Google_%22G%22_Logo.svg.png"></img>  -  Use Google Account</button>
+                    <input placeholder="Username" onChange={e => setUsername(e.target.value)}/>
+                    <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)}/>
+                    <button  className="login-button" onClick={() => login()}>Login</button>
+                    <section className="login-bottom-section">
+                        <Link to="/register"><h3>Forgot Password?</h3></Link>
+                        <h2>Don't have an account?<Link to="/register"> here!</Link></h2>
+                    </section>
+                </div>
             </div>
         )
     }
