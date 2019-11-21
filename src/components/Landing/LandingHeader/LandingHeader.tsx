@@ -6,15 +6,20 @@ import './styles/LandingHeader.scss'
 
 const Landing: React.FC<{user_id: number, getSession: Function}> = (props) => {
     return (
-        <div className="landing-header-main">
-            <section>
-                
-                <img src="https://miro.medium.com/max/1904/1*BCe1HWc1Y0-lUVJo2BH6xQ.png" alt="logo" className="asana-logo"/>
-            </section>
-            <section>
-                <button><Link to="/login">Login</Link></button>
-                <button><Link to="/register">Try for free</Link></button>
-            </section>
+        <div className="landing-header-parent">
+            <div className="landing-header-main">
+                <section className="landing-header-left">
+                    <img src="https://miro.medium.com/max/1904/1*BCe1HWc1Y0-lUVJo2BH6xQ.png" alt="logo" className="asana-logo"/>
+                    <h1>Why Asana? <img className="down-arrow" src="https://www.stickpng.com/assets/images/58f8bd170ed2bdaf7c128308.png"></img></h1>
+                    <h1>Solutions <img className="down-arrow" src="https://www.stickpng.com/assets/images/58f8bd170ed2bdaf7c128308.png"></img></h1>
+                    <h1>Resources <img className="down-arrow" src="https://www.stickpng.com/assets/images/58f8bd170ed2bdaf7c128308.png"></img></h1>
+                    <h1>Pricing</h1>
+                </section>
+                <section className="landing-header-right">
+                    <Link style={{textDecoration: 'none'}} to="/login"><h1>Log In</h1></Link>
+                    <Link style={{textDecoration: 'none'}} to="/register"><button>Try for free</button></Link>
+                </section>
+            </div>
         </div>
     )
 }

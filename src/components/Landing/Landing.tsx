@@ -18,7 +18,6 @@ const Landing: React.FC<{user_id: number, getSession: Function}> = (props) => {
         return (
             <div>
                 <LandingHeader />
-                <h1>Landing Comp</h1>
                 <Link to="/login">Login</Link>
                 <Link to="/register">Register</Link>
             </div>

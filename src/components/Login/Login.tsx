@@ -5,7 +5,7 @@ import { Redirect, Link } from 'react-router-dom';
 
 
 
-const Login: React.FunctionComponent<{username: String, password: String, user_id: number, loginUser: Function, getSession: Function}> = (props) => {
+const Login: React.FC<{username: String, password: String, user_id: number, loginUser: Function, getSession: Function}> = (props) => {
     const [username, setUsername] = React.useState(''); 
     const [password, setPassword] = React.useState('');
 

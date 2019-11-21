@@ -1,0 +1,88 @@
+.landing-header-parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.landing-header-main {
+  width: 70vw;
+  height: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: .95rem;
+}
+
+.landing-header-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 50%;
+  color: #525252;
+}
+
+.landing-header-left h1:hover {
+  color: #7A6FFF;
+  cursor: pointer;
+}
+
+.asana-logo {
+  max-width: 100px;
+}
+
+.down-arrow {
+  max-width: 10px;
+}
+
+.landing-header-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20%;
+}
+
+.landing-header-right h1 {
+  color: #525252;
+}
+
+.landing-header-right h1:hover {
+  color: #7A6FFF;
+  cursor: pointer;
+}
+
+.landing-header-right button {
+  text-decoration: none;
+  border: none;
+  width: 130px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  color: white;
+  cursor: pointer;
+  background: #7A6FFF;
+}
+/*# sourceMappingURL=LandingHeader.css.map */
