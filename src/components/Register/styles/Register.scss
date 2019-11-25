@@ -1,0 +1,70 @@
+.register-parent{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register-main{
+    height: 100%;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.register-main img{
+    max-width: 15vw;
+}
+.register-main h1 {
+    font-size: 3rem;
+}
+
+.register-main h3 {
+    font-size: .80rem;
+}
+
+.register-main input{
+    width: 65%;
+    height: 5vh;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    // opacity: 50%;
+    font-size: medium;
+}
+
+.register-button{
+    text-decoration: none;
+    border: none;
+    width: 65%;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    color: white;
+    cursor: pointer;
+    background: #7A6FFF;
+}
+
+.register-footer{
+    display: flex;
+    height: 13vh;
+    width: 100vw;
+    background: #222B37;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+}
+
+.register-footer img{
+    max-width: 150px;
+    opacity: 50%;
+}
+
+.register-footer img:hover{
+    opacity: 100%;
+    cursor: pointer;
+}
+
+.register-footer section{
+    display: flex;
+}

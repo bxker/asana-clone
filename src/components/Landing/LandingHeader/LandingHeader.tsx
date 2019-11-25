@@ -8,8 +8,6 @@ import Login from '../../Login/Login';
 const Landing: React.FC< {user_id: any, getSession: any}> = (props) => {
     const [toggle, setToggle] = React.useState(false)
 
-
-    
         return (
             <>
             <div className="landing-header-parent">
