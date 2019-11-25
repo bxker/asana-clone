@@ -88,8 +88,19 @@
 }
 
 .register-footer section {
+  width: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.social-icons img {
+  opacity: 70%;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  max-width: 30px;
 }
 /*# sourceMappingURL=Register.css.map */

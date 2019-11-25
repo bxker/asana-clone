@@ -66,5 +66,13 @@
 }
 
 .register-footer section{
+    width: 5%;
     display: flex;
+    justify-content: space-between;
+}
+
+.social-icons img{
+    opacity: 70%;
+    filter: invert(1);
+    max-width: 30px;
 }

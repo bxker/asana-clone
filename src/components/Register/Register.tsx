@@ -44,16 +44,16 @@ const Login: React.FC<{username?: String, password?: String, user_id?: number, r
                         <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)}/>
                         <button  className="register-button" onClick={() => register()}>Try for free</button>
                         <section className="register-bottom-section">
-                            <h2>Have an account? Log in <Link to="/login">here</Link>!</h2>
+                            <h2>Have an account? Log in <Link to="/">here</Link>!</h2>
                         </section>
                     </div>
                 </div>
                     <footer className="register-footer">
                         <h1>English</h1>
                         <h1>Terms & Privacy</h1>
-                        <section>
-                            <h1>Twitter</h1>
-                            <h1>Facebook</h1>
+                        <section className="social-icons">
+                            <img src="https://image.flaticon.com/icons/svg/733/733635.svg" alt="twitter"></img>
+                            <img src="https://image.flaticon.com/icons/svg/20/20837.svg" alt="facebook"></img>
                         </section>
                         <img src="https://luna1.co/Download_App_Store_Badge_US.svg" alt="apple-link"></img>
                         <img src="https://luna1.co/Google_Play_EN.svg" alt="google-link"></img>
