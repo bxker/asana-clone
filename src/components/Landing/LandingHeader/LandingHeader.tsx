@@ -13,7 +13,7 @@ const Landing: React.FC< {user_id: any, getSession: any}> = (props) => {
             <div className="landing-header-parent">
                 <div className="landing-header-main">
                     <section className="landing-header-left">
-                        <img src="https://miro.medium.com/max/1904/1*BCe1HWc1Y0-lUVJo2BH6xQ.png" alt="logo" className="asana-logo"/>
+                        <Link to="/"><img src="https://miro.medium.com/max/1904/1*BCe1HWc1Y0-lUVJo2BH6xQ.png" alt="logo" className="asana-logo"/></Link>
                         <h1>Why Asana? <img className="down-arrow" src="https://www.stickpng.com/assets/images/58f8bd170ed2bdaf7c128308.png"></img></h1>
                         <h1>Solutions <img className="down-arrow" src="https://www.stickpng.com/assets/images/58f8bd170ed2bdaf7c128308.png"></img></h1>
                         <h1>Resources <img className="down-arrow" src="https://www.stickpng.com/assets/images/58f8bd170ed2bdaf7c128308.png"></img></h1>

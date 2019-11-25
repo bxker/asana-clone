@@ -4,6 +4,7 @@ import Landing from './components/Landing/Landing';
 import Register from './components/Register/Register';
 // import Login from './components/Login/Login';
 import Main from './components/Main/Main';
+import Tasks from './components/Tasks/Tasks';
 
 
 export default (
@@ -11,7 +12,8 @@ export default (
         <Route exact path="/" component={Landing}/>
         <Route path="/register" component={Register} />
         {/* <Route path="/login" component={Login} /> */}
-        <Route path="/main" component={Main} />
+        <Route path="/home" component={Main} />
+        <Route path="/tasks/:username" component={Tasks}/>
         <Route render={() => {
             return <h1>404 Not Found</h1>
         }}/>

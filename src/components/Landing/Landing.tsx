@@ -14,7 +14,7 @@ const Landing: React.FC<{user_id: number, getSession: Function}> = (props) => {
     }, [props])
 
     if(props.user_id){
-        return <Redirect to="/main" />
+        return <Redirect to="/home" />
     }else{
         return (
             <>

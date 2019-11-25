@@ -7,7 +7,7 @@ import './styles/Register.css';
 //components
 import LandingHeader from '../Landing/LandingHeader/LandingHeader';
 
-const Login: React.FC<{username?: String, password?: String, user_id?: number, registerUser?: Function, getSession?: Function, setToggle: Function}> = (props) => {
+const Register: React.FC<{username?: String, password?: String, user_id?: number, registerUser?: Function, getSession?: Function, setToggle: Function}> = (props) => {
     const [username, setUsername] = React.useState(''); 
     const [password, setPassword] = React.useState('');
     const [email, setEmail] = React.useState('');
@@ -26,7 +26,7 @@ const Login: React.FC<{username?: String, password?: String, user_id?: number, r
 
     if(props.user_id){
         console.log(props.user_id)
-        return <Redirect to='/main'/>
+        return <Redirect to='/home'/>
     }else{
         return (
             <>
@@ -72,4 +72,4 @@ const mapStateToProps = (reduxState: any)=> {
 export default connect(mapStateToProps, {
     registerUser,
     getSession
-})(Login)
+})(Register)

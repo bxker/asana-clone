@@ -1,11 +1,23 @@
 import React from 'react';
-import Tasks from '../Tasks/Tasks'
+
+//components
+import Nav from '../Nav/Nav';
+import NavTop from './Nav-top/NavTop';
+
+//css
+import './styles/Main.css';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <h1>Main Component</h1>
-      {Tasks}
+    <div className="home-main-parent">
+      <nav className="nav-left">
+        <Nav />
+      </nav>
+      <section>
+        <nav className="nav-top">
+          <NavTop />
+        </nav>
+      </section>
     </div>
   );
 }

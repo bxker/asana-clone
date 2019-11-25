@@ -6,6 +6,7 @@ const session = require('express-session');
 
 //controllers
 const {getUser, register, login, logout} = require('./controllers/authController.ts');
+const {getTasks, addTask, editTask, deleteTask} = require('./controllers/tasksController.ts');
 
 //dotenv
 const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env;
@@ -33,5 +34,11 @@ app.get('/auth/user', getUser)
 app.post('/auth/register', register)
 app.post('/auth/login', login)
 app.post('/auth/logout', logout)
+
+//task endpoints
+app.get('/api/tasks', getTasks)
+app.post('/api/task', addTask)
+app.put('/api/task/:task_id', editTask)
+app.delete('/api/task/:task_id', deleteTask)
 
 app.listen(SERVER_PORT, () => console.log(`Server listening on port ${SERVER_PORT}.`));
