@@ -13,6 +13,7 @@
   background: black;
   position: fixed;
   z-index: 1;
+  opacity: 85%;
 }
 
 .login-main {
@@ -33,6 +34,7 @@
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   position: relative;
+  opacity: 100%;
 }
 
 .login-main h1 {

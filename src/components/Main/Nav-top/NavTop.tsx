@@ -1,18 +1,27 @@
 import React from 'react';
 import {connect} from 'react-redux';
-// import {loginUser, getSession} from '../../redux/reducers/userReducer';
+import {logoutUser} from '../../../redux/reducers/userReducer';
+import { Redirect } from 'react-router';
 // import { Redirect, Link } from 'react-router-dom';
 
 
 
-const NavTop: React.FC<{}> = (props) => {
+const NavTop: React.FC<{user_id: any, logoutUser: Function}> = (props) => {
 
+    let logout = () => {
+        props.logoutUser()
+    }
     
-    return (
-        <div className='nav-top-parent'>
-            <h1>Home Nav Top</h1>
-        </div>
-    )
+    if(props.user_id){
+        return (
+            <div className='nav-top-parent'>
+                <h1>Home Nav Top</h1>
+                <button onClick={() => logout()}>Logout</button>
+            </div>
+        )
+    }else{
+        return <Redirect to="/"/>
+    }
 }
 
 const mapStateToProps = (reduxState: any)=> {
@@ -22,5 +31,5 @@ const mapStateToProps = (reduxState: any)=> {
 }
 
 export default connect(mapStateToProps, {
-    
+    logoutUser
 })(NavTop)
