@@ -1,0 +1,109 @@
+.nav-top-parent{
+    width: 85vw;
+    height: 8vh;
+    border-bottom: 1px solid grey;
+    display: flex;
+    align-items: center;
+}
+
+.nav-top-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65%;
+    width: 100%;
+}
+
+.nav-top-top-left{
+    width: 20vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.profile-pic-1{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid grey;
+}
+
+.nav-top-top-left-info{
+    height: 6vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.list-calendar-files ul{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+}
+
+.down-arrow-nav{
+    width: 10px;
+    height: 10px;
+    border: none;
+}
+
+.nav-top-top-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 30vw;
+}
+
+.nav-top-top-right input{
+    width: 150px;
+    height: 25px;
+    border-radius: 15px;
+    border: 1px solid lightgrey;
+}
+
+.add-button{
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background: orange;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.question-button{
+    width: 30px;
+    height: 30px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    background: white;
+}
+
+.upgrade-button{
+    width: 75px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background: orange;
+    color: white;
+}
+
+.logout-button{
+    width: 75px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background: red;
+    color: white;
+}
+
+.profile-pic-2{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid grey;
+}
+
+
+
+

@@ -5,7 +5,8 @@ import axios from "axios";
 const initialState: Object = {
   user_id: null,
   username: "",
-  email: ""
+  email: "",
+  profile_pic: ""
 };
 
 //const strings
@@ -55,27 +56,31 @@ export default function reducer(state = initialState, action: any) {
         ...state,
         user_id: payload.data.user_id,
         username: payload.data.username,
-        email: payload.data.email
+        email: payload.data.email,
+        profile_pic: payload.data.profile_pic
       };
     case `${REGISTER_USER}_FULFILLED`:
       return {
         ...state,
         user_id: payload.data.user_id,
         username: payload.data.username,
-        email: payload.data.email
+        email: payload.data.email,
+        profile_pic: payload.data.profile_pic
       };
     case `${LOGIN_USER}_FULFILLED`:
       return {
         ...state,
         user_id: payload.data.user_id,
         username: payload.data.username,
-        email: payload.data.email
+        email: payload.data.email,
+        profile_pic: payload.data.profile_pic
       };
     case LOGOUT_USER:
       return {
         user_id: null,
         username: "",
-        email: ""
+        email: "",
+        profile_pic: ""
       };
     default:
       return state;
