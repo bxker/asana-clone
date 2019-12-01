@@ -1,6 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {getTasks} from '../../redux/reducers/taskReducer';
+import NavTop from '../Main/Nav-top/NavTop';
+import Nav from '../Nav/Nav';
+import './styles/Tasks.css';
 
 const Tasks: React.FC<{tasks: Array<any>, getTasks: Function}> = (props) => {
   
@@ -20,9 +23,13 @@ const Tasks: React.FC<{tasks: Array<any>, getTasks: Function}> = (props) => {
   })
 
   return (
-    <div className="tasks-main">
-      <h1>Tasks</h1>
-      {tasksMapped}
+    <div className="tasks-parent">
+      <Nav />
+      <div className="tasks-main">
+        <NavTop />
+        <h1>Tasks</h1>
+        {tasksMapped}
+      </div>
     </div>
   );
 }

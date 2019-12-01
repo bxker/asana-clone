@@ -3,7 +3,6 @@ import React from 'react';
 //components
 import Nav from '../Nav/Nav';
 import NavTop from './Nav-top/NavTop';
-import Tasks from '../Tasks/Tasks';
 
 //css
 import './styles/Main.css';
@@ -18,7 +17,6 @@ const App: React.FC = () => {
         <nav className="nav-top">
           <NavTop />
         </nav>
-        <Tasks />
       </section>
     </div>
   );
