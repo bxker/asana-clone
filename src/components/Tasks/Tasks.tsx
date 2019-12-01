@@ -27,8 +27,12 @@ const Tasks: React.FC<{tasks: Array<any>, getTasks: Function}> = (props) => {
       <Nav />
       <div className="tasks-main">
         <NavTop />
-        <h1>Tasks</h1>
-        {tasksMapped}
+        <div className="tasks-main-background">
+          <section className="tasks-main-content">
+            <h1>Tasks</h1>
+            {tasksMapped}
+          </section>
+        </div>
       </div>
     </div>
   );

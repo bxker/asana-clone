@@ -3,3 +3,23 @@
     height: 100vh;
     display: flex;
 }
+
+.tasks-main-background{
+    height: 91.9vh;
+    width: 85vw;
+    background-image: url('https://cdn.britannica.com/67/19367-050-885866B4/Valley-Taurus-Mountains-Turkey.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0px;
+}
+
+.tasks-main-content{
+    height: 90vh;
+    width: 65%;
+    background: white;
+    // border-radius: 5px;
+}
