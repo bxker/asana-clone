@@ -17,7 +17,7 @@ const Nav: React.FC<{username: String}> = (props) => {
                 </section>
                 <section className="nav-section-2">
                     <Link to="/" style={{textDecoration: 'none', color: 'white'}}><h1>Home</h1></Link>
-                    <Link to={`/tasks/${props.username}`} style={{textDecoration: 'none', color: 'white'}}><h1>Tasks</h1></Link>
+                    <Link to={`/tasks/${props.username}/list`} style={{textDecoration: 'none', color: 'white'}}><h1>Tasks</h1></Link>
                     <Link to="/" style={{textDecoration: 'none', color: 'white'}}><h1>Inbox</h1></Link>
                     <Link to="/" style={{textDecoration: 'none', color: 'white'}}><h1>Portfolio</h1></Link>
                 </section>

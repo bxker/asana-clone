@@ -22,7 +22,7 @@ export function getTasks() {
 export function addTask(task: any) {
     return {
         type: ADD_TASK,
-        payload: axios.post(`/api/task`, task)
+        payload: axios.post(`/api/task`, {task_content: task.taskInput, date_info: task.date})
     };
 }
 
@@ -33,10 +33,11 @@ export function editTask(task: any, task_id: Number) {
     };
 }
 
-export function deleteTask(task_id: Number) {
+export function deleteTask(task_id: any) {
+  console.log(task_id)
     return {
         type: DELETE_TASK,
-        payload: axios.get(`/api/task/${task_id}`)
+        payload: axios.delete(`/api/task/${task_id}`)
     };
 }
 

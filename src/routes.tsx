@@ -13,7 +13,7 @@ export default (
         <Route path="/register" component={Register} />
         {/* <Route path="/login" component={Login} /> */}
         <Route path="/home" component={Main} />
-        <Route path="/tasks/:username" component={Tasks}/>
+        <Route path="/tasks/:username/list" component={Tasks}/>
         <Route render={() => {
             return <h1>404 Not Found</h1>
         }}/>

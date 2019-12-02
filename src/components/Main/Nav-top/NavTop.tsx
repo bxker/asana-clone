@@ -7,7 +7,7 @@ import './styles/NavTop.css';
 
 
 
-const NavTop: React.FC<{user_id: any, profile_pic: any, logoutUser: Function}> = (props) => {
+const NavTop: React.FC<{user_id: any, profile_pic: any, username: String, logoutUser: Function}> = (props) => {
 
     let logout = () => {
         props.logoutUser()
@@ -21,11 +21,11 @@ const NavTop: React.FC<{user_id: any, profile_pic: any, logoutUser: Function}> =
                         <img className="profile-pic-1" alt='profile-pic' src={props.profile_pic}></img>
                         <div className="nav-top-top-left-info">
                             <section>
-                                <h1>Jake's Tasks - My Company <img className="down-arrow-nav" src="https://www.stickpng.com/assets/images/58f8bd170ed2bdaf7c128308.png"></img></h1>
+                                <h1>{props.username}'s Tasks - My Company <img className="down-arrow-nav" src="https://www.stickpng.com/assets/images/58f8bd170ed2bdaf7c128308.png"></img></h1>
                             </section>
                             <section className="list-calendar-files">
                                 <ul>
-                                    <li>List</li>
+                                    <li className="list-calendar-files-selected">List</li>
                                     <li>Calendar</li>
                                     <li>Files</li>
                                 </ul>
@@ -52,7 +52,8 @@ const NavTop: React.FC<{user_id: any, profile_pic: any, logoutUser: Function}> =
 const mapStateToProps = (reduxState: any)=> {
     return {
         user_id: reduxState.userReducer.user_id,
-        profile_pic: reduxState.userReducer.profile_pic
+        profile_pic: reduxState.userReducer.profile_pic,
+        username: reduxState.userReducer.username
     }
 }
 
