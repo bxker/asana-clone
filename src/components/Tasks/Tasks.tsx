@@ -9,22 +9,16 @@ const Tasks: React.FC<{tasks: Array<any>, getTasks: Function, addTask: Function,
 
   const [taskOpen, setTaskOpen] = React.useState(false)
   const [taskInput, setTaskInput] = React.useState('')
-  const [addButtonClicked, setButtonClicked] = React.useState(false)
   
   React.useEffect(() => {
   if(props.getTasks) {
       props.getTasks();
     }
-  }, [addButtonClicked])
+  }, [props.tasks, props.tasks])
 
   
   let addTaskToRedux = (task: any) => {
     props.addTask(task)
-    if(addButtonClicked == false){
-      setButtonClicked(true)
-    }else{
-      setButtonClicked(false)
-    }
     if(taskInput){
       setTaskInput('')
     }
@@ -32,29 +26,9 @@ const Tasks: React.FC<{tasks: Array<any>, getTasks: Function, addTask: Function,
 
   let deleteTaskRedux = (task: any) => {
     props.deleteTask(task)
-    if(addButtonClicked == false){
-      setButtonClicked(true)
-    }else{
-      setButtonClicked(false)
-    }
   }
-  
-  let today = new Date().toJSON()
-  function formatDate(date: any) {
-    var d = new Date(date),
-    month = '' + (d.getMonth() + 1),
-    day = '' + d.getDate(),
-    year = d.getFullYear();
-    
-    if (month.length < 2) 
-    month = '0' + month;
-    if (day.length < 2) 
-    day = '0' + day;
-    
-    return [year, month, day].join('/');
-  }
-  
-  let date = formatDate(today)
+
+  let date = new Date().toJSON()
   
   let tasksMapped = props.tasks.map((el, i) => {
     return (
