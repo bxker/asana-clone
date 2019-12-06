@@ -35,9 +35,19 @@ const deleteTask = async (req, res) => {
     res.status(200).json(deletedTask)
 }
 
+const getTaskById = async (req, res) => {
+    const db = req.app.get('db');
+    const {user_id} = req.session.user;
+    const {task_id} = req.params;
+
+    const task = await db.tasks.getTaskById(user_id, task_id);
+    res.status(200).json(task)
+}
+
 module.exports = {
     getTasks,
     addTask,
     editTask,
-    deleteTask
+    deleteTask,
+    getTaskById
 }

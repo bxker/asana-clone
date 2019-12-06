@@ -4,6 +4,7 @@ import {getTasks, addTask, deleteTask, editTask} from '../../redux/reducers/task
 import NavTop from '../Main/Nav-top/NavTop';
 import Nav from '../Nav/Nav';
 import './styles/Tasks.css';
+import TaskInformation from './TaskInformation/TaskInformation';
 
 const Tasks: React.FC<{tasks: Array<any>, getTasks: Function, addTask: Function, deleteTask: Function, editTask: Function}> = (props) => {
 
@@ -11,6 +12,8 @@ const Tasks: React.FC<{tasks: Array<any>, getTasks: Function, addTask: Function,
   const [taskInput, setTaskInput] = React.useState('')
   const [editTaskStatus, setEditTaskStatus ] = React.useState(false)
   const [editTaskInput, setEditTaskInput] = React.useState('')
+  const [showTaskInfo, setShowTaskInfo] = React.useState(false)
+  const [currentTaskId, setCurrentTaskId] = React.useState(0)
   
   React.useEffect(() => {
   if(props.getTasks) {
@@ -43,6 +46,7 @@ const Tasks: React.FC<{tasks: Array<any>, getTasks: Function, addTask: Function,
         <h1>{el.task_content}</h1>
         <button onClick={() => setEditTaskStatus(true)}>Edit</button>
         <button onClick={() => deleteTaskRedux(el.task_id)}>x</button>
+        <button onClick={() => {setShowTaskInfo(true); setCurrentTaskId(el.task_id)}}>task info</button>
         {editTaskStatus ? 
           <div>
             <input onChange={e => setEditTaskInput(e.target.value)}></input>
@@ -52,7 +56,6 @@ const Tasks: React.FC<{tasks: Array<any>, getTasks: Function, addTask: Function,
       </div>
     )
   })
-
   return (
     <div className="tasks-parent">
       <Nav />
@@ -76,6 +79,9 @@ const Tasks: React.FC<{tasks: Array<any>, getTasks: Function, addTask: Function,
               {tasksMapped}
             </div>
           </section>
+          {showTaskInfo ? 
+            <TaskInformation setShowTaskInfo={setShowTaskInfo} task_id={currentTaskId}/>
+          : null}
         </div>
       </div>
     </div>

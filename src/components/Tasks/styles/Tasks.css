@@ -17,9 +17,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -28,7 +27,13 @@
 
 .tasks-main-content {
   height: 90vh;
-  width: 65%;
+  width: 60%;
+  background: white;
+}
+
+.task-information {
+  height: 90vh;
+  width: 30vw;
   background: white;
 }
 /*# sourceMappingURL=Tasks.css.map */

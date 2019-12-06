@@ -12,14 +12,20 @@
     background-size: cover;
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-end;
     margin: 0px;
 }
 
 .tasks-main-content{
     height: 90vh;
-    width: 65%;
+    width: 60%;
     background: white;
     // border-radius: 5px;
+}
+
+.task-information{
+    height: 90vh;
+    width: 30vw;
+    background: white;
 }

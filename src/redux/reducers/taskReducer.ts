@@ -2,7 +2,8 @@ import axios from 'axios';
 
 //initial state
 const initialState: any = {
-    tasks: []
+    tasks: [],
+    task: []
 };
 
 //const strings
@@ -10,6 +11,7 @@ const GET_TASKS = "GET_TASKS";
 const ADD_TASK = "ADD_TASK";
 const EDIT_TASK = "EDIT_TASK";
 const DELETE_TASK = "DELETE_TASK";
+const GET_TASK_BY_ID = "GET_TASK_BY_ID";
 
 //functions
 export function getTasks() {
@@ -39,6 +41,13 @@ export function deleteTask(task_id: any) {
         type: DELETE_TASK,
         payload: axios.delete(`/api/task/${task_id}`)
     };
+}
+
+export function getTaskById(task_id: any){
+  return{
+    type: GET_TASK_BY_ID,
+    payload: axios.get(`/api/task/${task_id}`)
+  }
 }
 
 // export function orderTasks (tasks: any, index: any, newIndex: any) {
@@ -72,6 +81,11 @@ export default function reducer(state = initialState, action: any) {
         return {
           ...state,
           tasks: payload.data
+        };
+      case `${GET_TASK_BY_ID}_FULFILLED`:
+        return {
+          ...state,
+          task: payload.data
         };
       default:
         return state;
