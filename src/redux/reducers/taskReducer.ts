@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 //initial state
-const initialState: Object = {
+const initialState: any = {
     tasks: []
 };
 
@@ -26,10 +26,10 @@ export function addTask(task: any) {
     };
 }
 
-export function editTask(task: any, task_id: Number) {
+export function editTask(task_content: any, task_id: Number) {
     return {
         type: EDIT_TASK,
-        payload: axios.put(`/api/task/${task_id}`, task)
+        payload: axios.put(`/api/task/${task_id}`, {task_content})
     };
 }
 
@@ -40,6 +40,13 @@ export function deleteTask(task_id: any) {
         payload: axios.delete(`/api/task/${task_id}`)
     };
 }
+
+// export function orderTasks (tasks: any, index: any, newIndex: any) {
+//   initialState.tasks.splice(index, 1)
+//   initialState.tasks.splice(newIndex, 0, tasks)
+
+
+// }
 
 //reducer
 export default function reducer(state = initialState, action: any) {

@@ -19,10 +19,10 @@ const addTask = async (req, res) => {
 const editTask = async (req, res) => {
     const db = req.app.get('db');
     const {user_id} = req.session.user;
-    const {date_info, task_content, due_date} = req.body;
+    const {task_content, due_date} = req.body;
     const {task_id} = req.params;
 
-    const editedTask = await db.tasks.editTask(user_id, date_info, task_content, due_date, task_id);
+    const editedTask = await db.tasks.editTask(user_id, task_content, due_date, task_id);
     res.status(200).json(editedTask);
 }
 

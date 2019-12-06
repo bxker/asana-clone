@@ -1,14 +1,16 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {getTasks, addTask, deleteTask} from '../../redux/reducers/taskReducer';
+import {getTasks, addTask, deleteTask, editTask} from '../../redux/reducers/taskReducer';
 import NavTop from '../Main/Nav-top/NavTop';
 import Nav from '../Nav/Nav';
 import './styles/Tasks.css';
 
-const Tasks: React.FC<{tasks: Array<any>, getTasks: Function, addTask: Function, deleteTask: Function}> = (props) => {
+const Tasks: React.FC<{tasks: Array<any>, getTasks: Function, addTask: Function, deleteTask: Function, editTask: Function}> = (props) => {
 
   const [taskOpen, setTaskOpen] = React.useState(false)
   const [taskInput, setTaskInput] = React.useState('')
+  const [editTaskStatus, setEditTaskStatus ] = React.useState(false)
+  const [editTaskInput, setEditTaskInput] = React.useState('')
   
   React.useEffect(() => {
   if(props.getTasks) {
@@ -28,13 +30,25 @@ const Tasks: React.FC<{tasks: Array<any>, getTasks: Function, addTask: Function,
     props.deleteTask(task)
   }
 
+  let editTaskRedux = (task: any, task_id: any) => {
+    props.editTask(task, task_id)
+  }
+
+
   let date = new Date().toJSON()
   
   let tasksMapped = props.tasks.map((el, i) => {
     return (
       <div key={i}>
         <h1>{el.task_content}</h1>
+        <button onClick={() => setEditTaskStatus(true)}>Edit</button>
         <button onClick={() => deleteTaskRedux(el.task_id)}>x</button>
+        {editTaskStatus ? 
+          <div>
+            <input onChange={e => setEditTaskInput(e.target.value)}></input>
+            <button onClick={() => {editTaskRedux(editTaskInput, el.task_id); setEditTaskStatus(false)}}>Update</button>
+          </div>
+        : null}  
       </div>
     )
   })
@@ -77,5 +91,6 @@ const mapStateToProps = (reduxState: any)=> {
 export default connect(mapStateToProps, {
   getTasks,
   addTask,
-  deleteTask
+  deleteTask,
+  editTask
 })(Tasks)
