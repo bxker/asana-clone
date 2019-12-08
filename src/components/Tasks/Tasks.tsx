@@ -42,7 +42,7 @@ const Tasks: React.FC<{tasks: Array<any>, getTasks: Function, addTask: Function,
   
   let tasksMapped = props.tasks.map((el, i) => {
     return (
-      <div key={i}>
+      <div key={el.task_id}>
         <h1>{el.task_content}</h1>
         <button onClick={() => setEditTaskStatus(true)}>Edit</button>
         <button onClick={() => deleteTaskRedux(el.task_id)}>x</button>

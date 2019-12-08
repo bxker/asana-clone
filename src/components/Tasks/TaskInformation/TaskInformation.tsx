@@ -13,7 +13,7 @@ const TaskInformation: React.FC<{setShowTaskInfo: Function, getTaskById: Functio
 
     let taskMapped = props.task.map((el, i) => {
         return (
-            <div key={i}>
+            <div key={el.task_id}>
                 <h1>{el.task_content}</h1>
             </div>
         )
