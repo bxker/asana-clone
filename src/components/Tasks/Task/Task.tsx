@@ -6,16 +6,14 @@ import {deleteTask, editTask} from '../../../redux/reducers/taskReducer'
 const Task: React.FC<{ index: number, task_id: number, task_content: string, deleteTask: Function, editTask: Function, setCurrentTaskId: Function, setShowTaskInfo: Function, showTaskInfo: any}> = props => {
     const [editTaskStatus, setEditTaskStatus ] = React.useState(false)
     const [editTaskInput, setEditTaskInput] = React.useState('')
-    
-   
 
     let deleteTaskRedux = (task: any) => {
         props.deleteTask(task)
       }
     
-      let editTaskRedux = (task: any, task_id: any) => {
-        props.editTask(task, task_id)
-      }
+    let editTaskRedux = (task: any, task_id: any) => {
+    props.editTask(task, task_id)
+    }
     
     return (
         <div key={props.task_id}>
