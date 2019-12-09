@@ -15,13 +15,21 @@ const TaskInformation: React.FC<{setShowTaskInfo: Function, getTaskById: Functio
             <div key={el.task_id}>
                 <section>
                     <input value={el.task_content}></input>
+                    <button>Update</button>
                 </section>
                 <section>
-                    <h1>{el.date_info}</h1>
+                    <div>
+                        <img alt="avi"></img>
+                        <div>
+                            <h1>Assigned To</h1>
+                            <h2>User</h2>
+                        </div>
+                    </div>
                     {!el.due_date ? <h1>No Due Date</h1> : <h1>{el.due_date}</h1>}
                 </section>
                 <section>
-                    <input placeholder="Description"></input>
+                    {el.task_description ? <input placeholder={el.task_description}></input> : <input placeholder="Description"></input>}
+                    <button>Update</button>
                 </section>
             </div>
         )
@@ -29,34 +37,36 @@ const TaskInformation: React.FC<{setShowTaskInfo: Function, getTaskById: Functio
     
     return (
         <div className="task-information">
-            <section>
+            <section className="task-information-detailed">
                 <div>
-                    <button>Marked Complete</button>
-                    <button>Attach</button>
-                    <button>SubTasks</button>
-                    <button>Copy Link</button>
-                    <button>Like</button>
-                    <button>Settings</button>
-                    <button onClick={() => props.setShowTaskInfo(false)}>X</button>
-                </div>
-                <div>
-                    <h1>This task is private to you. <span>Make public</span></h1>
+                    <div>
+                        <button>Marked Complete</button>
+                        <button>Attach</button>
+                        <button>SubTasks</button>
+                        <button>Copy Link</button>
+                        <button>Like</button>
+                        <button>Settings</button>
+                        <button onClick={() => props.setShowTaskInfo(false)}>X</button>
+                    </div>
+                    <div>
+                        <h1>This task is private to you. <span>Make public</span></h1>
+                    </div>
                 </div>
                 {taskMapped}
-            </section>
-            <section>
-                <h1>Add to Project</h1>
-            </section>
-            <section>
                 <div>
+                    <h1>Add to Project</h1>
+                </div>
+            </section>
+            <section className="task-information-chat-section">
+                <div className="task-information-chat-user">
                     <img alt="avi"></img>
                     <h1>User created this task</h1>
                 </div>
-                <div>
+                <div className="task-information-chat-input">
                     <img alt="avi"></img>
                     <input placeholder="Ask a question or post an update..."></input>
                 </div>
-                <div>
+                <div className="task-information-task-follow">
                     <h1>Followers</h1>
                     <img alt="avi"></img>
                     <h1>Following</h1>
