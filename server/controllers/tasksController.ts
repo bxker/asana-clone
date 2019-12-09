@@ -44,10 +44,40 @@ const getTaskById = async (req, res) => {
     res.status(200).json(task)
 }
 
+const completeTask = async (req, res) => {
+    const db = req.app.get('db');
+    const {user_id} = req.session.user;
+    const {task_id} = req.params;
+
+    const completedTask = await db.tasks.completeTask(user_id, task_id)
+    res.status(200).json(completedTask)
+}
+
+const unCompleteTask = async (req, res) => {
+    const db = req.app.get('db');
+    const {user_id} = req.session.user;
+    const {task_id} = req.params;
+
+    const unCompletedTask = await db.tasks.unCompleteTask(user_id, task_id)
+    res.status(200).json(unCompletedTask)
+}
+
+
+const completedTasks = async (req, res) => {
+    const db = req.app.get('db');
+    const {user_id} = req.session.user;
+
+    const completedTasks = await db.tasks.completedTasks(user_id)
+    res.status(200).json(completedTasks)
+}
+
 module.exports = {
     getTasks,
     addTask,
     editTask,
     deleteTask,
-    getTaskById
+    getTaskById,
+    completeTask,
+    unCompleteTask,
+    completedTasks
 }

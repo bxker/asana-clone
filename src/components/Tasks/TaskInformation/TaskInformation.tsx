@@ -14,7 +14,7 @@ const TaskInformation: React.FC<{setShowTaskInfo: Function, getTaskById: Functio
         return (
             <div key={el.task_id}>
                 <section>
-                    <input value={el.task_content}></input>
+                    <input placeholder={el.task_content}></input>
                     <button>Update</button>
                 </section>
                 <section>
