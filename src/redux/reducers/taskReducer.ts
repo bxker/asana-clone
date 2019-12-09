@@ -55,6 +55,7 @@ export function getTaskById(task_id: number){
 }
 
 export function setTaskCompleted(task_id: number){
+  console.log('hit')
   return {
     type: SET_TASK_COMPLETED,
     payload: axios.put(`/api/task/completeTask/${task_id}`)

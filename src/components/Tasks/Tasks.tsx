@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {getTasks, addTask, deleteTask, editTask} from '../../redux/reducers/taskReducer';
+import {getTasks, addTask} from '../../redux/reducers/taskReducer';
 import NavTop from '../Main/Nav-top/NavTop';
 import Nav from '../Nav/Nav';
 import './styles/Tasks.css';
@@ -13,14 +13,22 @@ const Tasks: React.FC<{tasks: Array<any>, getTasks: Function, addTask: Function,
   const [taskInput, setTaskInput] = React.useState('')
   const [showTaskInfo, setShowTaskInfo] = React.useState(false)
   const [currentTaskId, setCurrentTaskId] = React.useState(0)
-  
+  // const mounted = React.useRef(false);
   
   
   React.useEffect(() => {
   if(props.getTasks) {
       props.getTasks();
     }
-  }, [props.tasks, props.tasks])
+  }, [props])
+
+  // React.useEffect(() => {
+  //   if(!mounted.current){
+  //     mounted.current = true
+  //   }else{
+  //     props.getTasks();
+  //   }
+  // })
 
   
   let addTaskToRedux = (task: any) => {
@@ -33,14 +41,17 @@ const Tasks: React.FC<{tasks: Array<any>, getTasks: Function, addTask: Function,
   let date = new Date().toJSON()
   
   let tasksMapped = props.tasks.map((el, i) => {
+    console.log(el)
     return (
       <Task 
         index={i}
         task_id={el.task_id}
         task_content ={el.task_content}
+        task_complete = {el.task_complete}
         showTaskInfo={showTaskInfo}
         setShowTaskInfo={setShowTaskInfo}
         setCurrentTaskId={setCurrentTaskId}
+        
       />
     )
   })
