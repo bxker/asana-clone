@@ -5,6 +5,7 @@ import NavTop from '../Main/Nav-top/NavTop';
 import Nav from '../Nav/Nav';
 import './styles/Tasks.css';
 import TaskInformation from './TaskInformation/TaskInformation';
+import Task from './Task/Task';
 
 const Tasks: React.FC<{tasks: Array<any>, getTasks: Function, addTask: Function, deleteTask: Function, editTask: Function}> = (props) => {
 
@@ -42,18 +43,19 @@ const Tasks: React.FC<{tasks: Array<any>, getTasks: Function, addTask: Function,
   
   let tasksMapped = props.tasks.map((el, i) => {
     return (
-      <div key={el.task_id}>
-        <h1>{el.task_content}</h1>
-        <button onClick={() => setEditTaskStatus(true)}>Edit</button>
-        <button onClick={() => deleteTaskRedux(el.task_id)}>x</button>
-        <button onClick={() => {setShowTaskInfo(true); setCurrentTaskId(el.task_id)}}>task info</button>
-        {editTaskStatus ? 
-          <div>
-            <input onChange={e => setEditTaskInput(e.target.value)}></input>
-            <button onClick={() => {editTaskRedux(editTaskInput, el.task_id); setEditTaskStatus(false)}}>Update</button>
-          </div>
-        : null}  
-      </div>
+      <Task 
+        index={i}
+        task_id={el.task_id}
+        task_content ={el.task_content}
+        editTaskStatus={editTaskStatus}
+        editTaskInput={editTaskInput}
+        setEditTaskStatus={setEditTaskStatus}
+        deleteTaskRedux={deleteTaskRedux}
+        setShowTaskInfo={setShowTaskInfo}
+        setCurrentTaskId={setCurrentTaskId}
+        setEditTaskInput={setEditTaskInput}
+        editTaskRedux={editTaskRedux}
+      />
     )
   })
   return (
