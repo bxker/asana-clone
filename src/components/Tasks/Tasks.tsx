@@ -11,10 +11,10 @@ const Tasks: React.FC<{tasks: Array<any>, getTasks: Function, addTask: Function,
 
   const [taskOpen, setTaskOpen] = React.useState(false)
   const [taskInput, setTaskInput] = React.useState('')
-  const [editTaskStatus, setEditTaskStatus ] = React.useState(false)
-  const [editTaskInput, setEditTaskInput] = React.useState('')
   const [showTaskInfo, setShowTaskInfo] = React.useState(false)
   const [currentTaskId, setCurrentTaskId] = React.useState(0)
+  
+  
   
   React.useEffect(() => {
   if(props.getTasks) {
@@ -30,15 +30,6 @@ const Tasks: React.FC<{tasks: Array<any>, getTasks: Function, addTask: Function,
     }
   }
 
-  let deleteTaskRedux = (task: any) => {
-    props.deleteTask(task)
-  }
-
-  let editTaskRedux = (task: any, task_id: any) => {
-    props.editTask(task, task_id)
-  }
-
-
   let date = new Date().toJSON()
   
   let tasksMapped = props.tasks.map((el, i) => {
@@ -47,14 +38,9 @@ const Tasks: React.FC<{tasks: Array<any>, getTasks: Function, addTask: Function,
         index={i}
         task_id={el.task_id}
         task_content ={el.task_content}
-        editTaskStatus={editTaskStatus}
-        editTaskInput={editTaskInput}
-        setEditTaskStatus={setEditTaskStatus}
-        deleteTaskRedux={deleteTaskRedux}
+        showTaskInfo={showTaskInfo}
         setShowTaskInfo={setShowTaskInfo}
         setCurrentTaskId={setCurrentTaskId}
-        setEditTaskInput={setEditTaskInput}
-        editTaskRedux={editTaskRedux}
       />
     )
   })
@@ -98,7 +84,5 @@ const mapStateToProps = (reduxState: any)=> {
 
 export default connect(mapStateToProps, {
   getTasks,
-  addTask,
-  deleteTask,
-  editTask
+  addTask
 })(Tasks)

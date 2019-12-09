@@ -1,13 +1,27 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getTaskById } from "../../../redux/reducers/taskReducer";
+import {deleteTask, editTask} from '../../../redux/reducers/taskReducer'
 
-const Task: React.FC<{ index: number, task_id: number, task_content: string, editTaskStatus: boolean, editTaskInput: string, setEditTaskStatus: Function, deleteTaskRedux: Function, setShowTaskInfo: Function, setCurrentTaskId: Function, setEditTaskInput: Function, editTaskRedux: Function}> = props => {
+
+const Task: React.FC<{ index: number, task_id: number, task_content: string, deleteTask: Function, editTask: Function, setCurrentTaskId: Function, setShowTaskInfo: Function, showTaskInfo: any}> = props => {
+    const [editTaskStatus, setEditTaskStatus ] = React.useState(false)
+    const [editTaskInput, setEditTaskInput] = React.useState('')
+    
+   
+
+    let deleteTaskRedux = (task: any) => {
+        props.deleteTask(task)
+      }
+    
+      let editTaskRedux = (task: any, task_id: any) => {
+        props.editTask(task, task_id)
+      }
+    
     return (
         <div key={props.task_id}>
             <h1>{props.task_content}</h1>
-            <button onClick={() => props.setEditTaskStatus(true)}>Edit</button>
-            <button onClick={() => props.deleteTaskRedux(props.task_id)}>x</button>
+            <button onClick={() => setEditTaskStatus(true)}>Edit</button>
+            <button onClick={() => deleteTaskRedux(props.task_id)}>x</button>
             <button
                 onClick={() => {
                 props.setShowTaskInfo(true);
@@ -16,13 +30,13 @@ const Task: React.FC<{ index: number, task_id: number, task_content: string, edi
             >
                 task info
             </button>
-            {props.editTaskStatus ? (
+            {editTaskStatus ? (
             <div>
-                <input onChange={e => props.setEditTaskInput(e.target.value)}></input>
+                <input onChange={e => setEditTaskInput(e.target.value)}></input>
                 <button
                 onClick={() => {
-                    props.editTaskRedux(props.editTaskInput, props.task_id);
-                    props.setEditTaskStatus(false);
+                    editTaskRedux(editTaskInput, props.task_id);
+                    setEditTaskStatus(false);
                 }}
                 >
                 Update
@@ -40,5 +54,6 @@ const mapStateToProps = (reduxState: any) => {
 };
 
 export default connect(mapStateToProps, {
-  getTaskById
+    deleteTask,
+    editTask
 })(Task);
