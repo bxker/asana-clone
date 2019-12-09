@@ -68,7 +68,10 @@ const Tasks: React.FC<{tasks: Array<any>, getTasks: Function, addTask: Function,
             </div>
           </section>
           {showTaskInfo ? 
-            <TaskInformation setShowTaskInfo={setShowTaskInfo} task_id={currentTaskId}/>
+            <TaskInformation 
+              setShowTaskInfo={setShowTaskInfo} 
+              task_id={currentTaskId}
+            />
           : null}
         </div>
       </div>
