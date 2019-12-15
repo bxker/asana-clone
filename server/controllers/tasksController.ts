@@ -45,14 +45,11 @@ const getTaskById = async (req, res) => {
 }
 
 const completeTask = async (req, res) => {
-    console.log('hit')
     const db = req.app.get('db');
     const {user_id} = req.session.user;
     const {task_id} = req.params;
-    console.log(user_id, task_id)
 
     const completedTask = await db.tasks.completeTask(+user_id, +task_id)
-    console.log(completedTask)
     res.status(200).json(completedTask)
 }
 

@@ -1,5 +1,5 @@
 .landing-main {
-  height: 50vh;
+  height: 90vh;
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -23,7 +23,10 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  height: 80%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
   width: 50%;
 }
 
@@ -46,5 +49,26 @@
   color: white;
   cursor: pointer;
   background: #7A6FFF;
+}
+
+.landing-section-1 img {
+  max-width: 80%;
+}
+
+.landing-section-1-div-1 {
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=Landing.css.map */

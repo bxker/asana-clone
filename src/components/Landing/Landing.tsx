@@ -21,9 +21,12 @@ const Landing: React.FC<{user_id: number, getSession: Function}> = (props) => {
                 <LandingHeader />
                 <div className="landing-main">
                     <section className="landing-section-1">
-                        <h1>Make more time for the work that matters most</h1>
-                        <h2>Asana is the work management platform teams use to stay focused on the goals, projects, and daily tasks that grow business.</h2>
-                        <Link to="/register"><button>Try for free</button></Link>
+                        <div className="landing-section-1-div-1">
+                            <h1>Make more time for the work that matters most</h1>
+                            <h2>Asana is the work management platform teams use to stay focused on the goals, projects, and daily tasks that grow business.</h2>
+                            <Link to="/register" style={{maxWidth: '175px'}}><button>Try for free</button></Link>
+                        </div>
+                        <img src="https://luna1.co/36f50a.png"></img>
                     </section>
                 </div>
             </>
