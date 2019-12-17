@@ -21,6 +21,9 @@
     height: 90vh;
     width: 60%;
     background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     // border-radius: 5px;
 }
 
@@ -28,4 +31,38 @@
     height: 90vh;
     width: 30vw;
     background: white;
+}
+
+.tasks-top-section{
+    width: 12.5%;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.add-task-button{
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #15AAF5;
+    cursor: pointer;
+}
+
+.add-task-drop-down{
+    width: 20px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #15AAF5;
+    cursor: pointer;
+}
+
+.recently-assigned{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    // background-color: red;
 }
