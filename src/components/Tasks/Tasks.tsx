@@ -55,7 +55,7 @@ const Tasks: React.FC<{ tasks: Array<any>, getTasks: Function, addTask: Function
           <section className="tasks-main-content">
             <div className="tasks-top-section">
               <button className="add-task-button" onClick={() => setTaskOpen(true)}>+ Add Task</button>
-              <button className="add-task-drop-down">^</button>
+              <button className="add-task-drop-down"><img className="down-arrow-nav" style={{filter: 'invert(100%)'}} src="https://www.stickpng.com/assets/images/58f8bd170ed2bdaf7c128308.png"></img></button>
             </div>
             <div className="task-sections">
               {taskOpen ? (

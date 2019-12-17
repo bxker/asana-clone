@@ -51,10 +51,13 @@ const Task: React.FC<{
             <div className="task-edit-delete">
                 <button
                     className="task-edit-button"
-                    onClick={() => setEditTaskStatus(true)}>
+                    onClick={() => {
+                        props.setShowTaskInfo(true);
+                        props.setCurrentTaskId(props.task_id)
+                    }}>
                     Edit
                 </button>
-                {editTaskStatus ? (
+                {/* {editTaskStatus ? (
                     <div>
                         <input onChange={e => setEditTaskInput(e.target.value)}></input>
                         <button
@@ -71,7 +74,7 @@ const Task: React.FC<{
                             Cancel
                         </button>
                     </div>
-                ) : null}
+                ) : null} */}
                 <button
                     className="task-delete-button"
                     onClick={() => deleteTaskRedux(props.task_id)}>
