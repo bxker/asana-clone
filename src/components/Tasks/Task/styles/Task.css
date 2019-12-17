@@ -1,5 +1,5 @@
 .task-container {
-  height: 25px;
+  height: 30px;
   width: 99%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11,7 +11,13 @@
       -ms-flex-align: center;
           align-items: center;
   margin: 5px;
-  font-size: small;
+  font-size: .80rem;
+}
+
+.task-container:hover {
+  background: #fafafa;
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
 }
 
 .task-edit-delete {
@@ -22,5 +28,29 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+}
+
+.task-edit-button {
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background: #10b310;
+  cursor: pointer;
+}
+
+.task-delete-button {
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background: red;
+  cursor: pointer;
+}
+
+.task-info-button {
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background: #15AAF5;
+  cursor: pointer;
 }
 /*# sourceMappingURL=Task.css.map */

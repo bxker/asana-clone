@@ -39,13 +39,13 @@ const Task: React.FC<{
                 <h1
                     onClick={() => props.setTaskCompleted(props.task_id)}
                     style={{ textDecoration: "line-through", cursor: "pointer" }}>
-                    {props.task_content}
+                    <span style={{color: "red"}}>&#x25A0;</span>{props.task_content}
                 </h1>
             ) : (
                     <h1
                         onClick={() => props.setTaskNotCompleted(props.task_id)}
                         style={{ cursor: "pointer" }}>
-                        {props.task_content}{" "}
+                        <span style={{color: "limegreen"}}>&#x25A0;</span>{props.task_content}{" "}
                     </h1>
                 )}
             <div className="task-edit-delete">
@@ -78,6 +78,7 @@ const Task: React.FC<{
                     Delete
                 </button>
                 <button
+                    className="task-info-button"
                     onClick={() => {
                         props.setShowTaskInfo(true);
                         props.setCurrentTaskId(props.task_id);
