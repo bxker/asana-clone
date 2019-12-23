@@ -1,21 +1,26 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {getTaskById} from '../../../redux/reducers/taskReducer';
+import {getTaskById, editTask} from '../../../redux/reducers/taskReducer';
 import './styles/TaskInformation.css';
 
 
-const TaskInformation: React.FC<{setShowTaskInfo: Function, getTaskById: Function, task: Array<any>, task_id: Number}> = (props) => {
+const TaskInformation: React.FC<{setShowTaskInfo: Function, editTask: Function, getTaskById: Function, task: Array<any>, task_id: Number}> = (props) => {
+    const [editTaskInput, setEditTaskInput] = React.useState("");
 
     React.useEffect(() => {
         props.getTaskById(props.task_id);
     }, [])
 
+    let editTaskRedux = (task: any, task_id: any) => {
+        props.editTask(task, task_id);
+    };
+
     let taskMapped = props.task.map((el, i) => {
         return (
             <div key={el.task_id}>
                 <section>
-                    <input placeholder={el.task_content}></input>
-                    <button>Update</button>
+                    <input onChange={(e) => setEditTaskInput(e.target.value)} placeholder={el.task_content}></input>
+                    <button onClick={() => editTaskRedux(editTaskInput, el.task_id)}>Update</button>
                 </section>
                 <section>
                     <div>
@@ -83,5 +88,6 @@ const mapStateToProps = (reduxState: any)=> {
   }
   
   export default connect(mapStateToProps, {
-    getTaskById
+    getTaskById,
+    editTask
   })(TaskInformation)
